@@ -4,12 +4,12 @@ This project implements a Text-to-Speech (TTS) model with various components inc
 
 ## Project Structure
 
-- `src/`: Core TTS implementation scripts
-  - `simple_tts.py`: Simple TTS implementation
+- `src/`: Core TTS inference scripts
   - `rag_tts.py`: RAG-based TTS
-  - `train_vocoder.py`: Vocoder training script
   - `tts.py`: Additional TTS utilities
-- `distil/`: Knowledge distillation scripts
+- `training/`: Training and distillation scripts
+  - `simple_tts.py`: Simple TTS implementation with training
+  - `train_vocoder.py`: Vocoder training script
   - `distill_train.py`: Distillation training script
   - `distill_finetune.py`: Distillation fine-tuning script
   - `generate_dataset.py`: Dataset generation script
