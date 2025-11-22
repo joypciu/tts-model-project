@@ -24,7 +24,7 @@ This project implements a Text-to-Speech (TTS) model with various components inc
 
 2. Install dependencies:
    ```bash
-   pip install -r requirements.txt  # If requirements.txt exists
+   pip install -r requirements.txt
    ```
    (Note: Ensure you have Python 3.x and necessary libraries like torch, etc.)
 
