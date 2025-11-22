@@ -11,6 +11,8 @@ This repository contains the inference-ready TTS system. Training scripts are ex
 
 Both scripts are designed to work with pre-trained models or fallback to basic generation.
 
+**Note:** The training components (distillation, SimpleTTS model training, and vocoder training) are currently work-in-progress and not included in this GitHub repository. They are available locally in the `training/` folder but excluded from version control until production-ready.
+
 ## Quick Start - Running TTS
 
 ### Prerequisites
