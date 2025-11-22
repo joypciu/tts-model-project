@@ -26,6 +26,9 @@ coverage.xml
 data/
 models/
 
+# Work in progress
+training/
+
 # OS
 .DS_Store
 Thumbs.db

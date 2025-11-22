@@ -5,17 +5,12 @@ This project implements a Text-to-Speech (TTS) model with various components inc
 ## Project Structure
 
 - `src/`: Core TTS inference scripts
-  - `rag_tts.py`: RAG-based TTS
+  - `rag_tts.py`: RAG-based TTS implementation
   - `tts.py`: Additional TTS utilities
-- `training/`: Training and distillation scripts
-  - `simple_tts.py`: Simple TTS implementation with training
-  - `train_vocoder.py`: Vocoder training script
-  - `distill_train.py`: Distillation training script
-  - `distill_finetune.py`: Distillation fine-tuning script
-  - `generate_dataset.py`: Dataset generation script
 - `data/`: Dataset files (ignored in Git)
 - `models/`: Model files (ignored in Git)
 - `setup.md`: Setup instructions
+- `training/`: Training scripts (work in progress, ignored in Git)
 
 ## Installation
 
@@ -33,12 +28,37 @@ This project implements a Text-to-Speech (TTS) model with various components inc
 
 ## Usage
 
-- Run simple TTS: `python src/simple_tts.py`
-- Generate dataset: `python src/generate_dataset.py`
-- Train model: `python src/distill_train.py`
-- Fine-tune: `python src/distill_finetune.py`
+### Running TTS Inference
 
-Refer to `setup.md` for detailed setup instructions.
+**RAG-based TTS:**
+```bash
+python src/rag_tts.py --text "Hello, world!" --output output.wav
+```
+
+**Basic TTS:**
+```bash
+python src/tts.py --text "Hello, world!" --output output.wav
+```
+
+### Command Line Options
+
+Both scripts support the following options:
+- `--text`: Text to convert to speech
+- `--output`: Output audio file path (default: output.wav)
+- `--model`: Path to pre-trained model (if available)
+- `--speaker`: Speaker ID for multi-speaker models (default: 0)
+
+### Example Usage
+
+```bash
+# Generate speech with RAG TTS
+python src/rag_tts.py --text "This is a test of the RAG-based TTS system." --output rag_test.wav
+
+# Generate speech with basic TTS
+python src/tts.py --text "Hello, how are you today?" --output basic_test.wav
+```
+
+Refer to `setup.md` for detailed setup instructions and model requirements.
 
 ## Contributing
 

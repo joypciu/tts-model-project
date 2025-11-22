@@ -1,6 +1,56 @@
-# NeuTTS Air Setup Guide
+# TTS Model Setup Guide
 
-This guide documents the setup and usage of the modified NeuTTS Air text-to-speech system.
+This guide documents the setup and usage of the TTS inference system. This version focuses on the ready-to-use inference scripts that can run without large training files.
+
+## GitHub Version (Inference Only)
+
+This repository contains the inference-ready TTS system. Training scripts are excluded from GitHub as they are work-in-progress. The system includes:
+
+- **RAG-based TTS** (`src/rag_tts.py`): Intelligent voice selection with emotion detection
+- **Basic TTS** (`src/tts.py`): Simple text-to-speech conversion
+
+Both scripts are designed to work with pre-trained models or fallback to basic generation.
+
+## Quick Start - Running TTS
+
+### Prerequisites
+- Python 3.8+
+- Install dependencies: `pip install -r requirements.txt`
+
+### Running RAG-based TTS
+```bash
+# Interactive mode
+python src/rag_tts.py
+
+# With text input
+python src/rag_tts.py --text "Hello, this is a test of RAG-based TTS with emotion detection."
+
+# With custom output file
+python src/rag_tts.py --text "Your message here" --output my_speech.wav
+```
+
+### Running Basic TTS
+```bash
+# Interactive mode
+python src/tts.py
+
+# With text input
+python src/tts.py --text "Hello, this is basic TTS generation."
+
+# With custom output file
+python src/tts.py --text "Your message here" --output basic_speech.wav
+```
+
+### Command Line Options
+- `--text`: Text to convert to speech (optional, will prompt if not provided)
+- `--output`: Output audio file path (default: output.wav)
+- `--model`: Path to pre-trained model file (optional)
+- `--speaker`: Speaker ID for voice selection (default: 0)
+
+### Expected Output
+- Audio files are saved as WAV format (22kHz sample rate)
+- Scripts will display progress and save location
+- If no model is provided, scripts use built-in fallback generation
 
 ## Overview
 
